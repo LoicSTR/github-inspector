@@ -1,35 +1,39 @@
-import "./App.css";
+import "./styles/App.css";
+import "./styles/reset.css"
 import { githubRequest } from "./utils";
 import { useState } from "react";
 import SearchForm from "./components/searchForm"
-import ItemsList from "./components/ItemsList";
+import ItemsList from "./components/ItemsList/ItemsList";
 import UserDetails from "./components/UserDetails";
 // import { useEffect } from "react";
 
 function App() {
   const [currentUser, setCurrentUser] = useState('')
   const [searchResults, setSearchResults] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
 
   const searchUsers = async (form) => {
+    setIsLoading(true)
     const users = await githubRequest(`https://api.github.com/search/users?q=${form.query}`)
     setSearchResults(users.items)
     setCurrentUser('')
+    setIsLoading(false)
   }
 
-  // useEffect(() => {
-  //   console.log(searchResults)
-  // }, [searchResults])
-
+  const getUserDetails = (user) => {
+    setCurrentUser({login: user, timestamp: Date.now()})
+  }
   return (
-    <section className="main">
-      <div>
-        <h1>Github Inspector</h1>
-        <SearchForm onSubmit={searchUsers}/>
-        <p>{searchResults.length ? `${searchResults.length} recherches` : "Aucun résultat"} </p>
-        <ItemsList searchUsers={searchResults} onClick={setCurrentUser}/>
-      </div>
-      <UserDetails user={currentUser} />
-    </section>
+    <main>
+      <section className="searchContainer">
+          <h1>Github Inspector</h1>
+          <SearchForm onSubmit={searchUsers}/>
+          <ItemsList searchUsers={searchResults} onClick={getUserDetails} isLoading={isLoading}/>
+      </section>
+      <section className="detailsContainer">
+        <UserDetails user={currentUser} isLoading={isLoading}/>
+      </section>
+    </main>
   )
 }
 
