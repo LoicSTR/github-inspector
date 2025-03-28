@@ -1,3 +1,5 @@
+import "./SearchForm.css";
+
 const SearchForm = ({onSubmit}) => {
     const submit = (e) => {
         e.preventDefault()
@@ -6,8 +8,8 @@ const SearchForm = ({onSubmit}) => {
     }
     return(
         <form onSubmit={submit}>
-            <input type="text" name="searchInput"/>
-            <button type="submit">Search</button>
+            <input type="text" name="searchInput" placeholder="Search an user"/>
+            <button type="submit" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
     )
 

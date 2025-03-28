@@ -9,8 +9,8 @@ const ItemsList = ({searchUsers, onClick, isLoading}) => {
     }
     const resultText = searchUsers.length ? `${searchUsers.length} ${(searchUsers.length > 1 ? "recherches" : "recherche")}` : "Aucun résultat"
     return (
-        <>
-            <p>{resultText}</p>
+        <div>
+            <p className="result-text">{resultText}</p>
             <ul>
                 {searchUsers.map(user => (
                     <li key={user.id} role="button" onClick={() => onClick((user.login))}>
@@ -19,7 +19,7 @@ const ItemsList = ({searchUsers, onClick, isLoading}) => {
                     </li>
                 ))}
             </ul>
-        </>
+        </div>
     )
 }
 export default ItemsList

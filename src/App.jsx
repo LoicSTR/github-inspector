@@ -2,10 +2,9 @@ import "./styles/App.css";
 import "./styles/reset.css"
 import { githubRequest } from "./utils";
 import { useState } from "react";
-import SearchForm from "./components/searchForm"
+import SearchForm from "./components/Searchform/SearchForm"
 import ItemsList from "./components/ItemsList/ItemsList";
 import UserDetails from "./components/UserDetails";
-// import { useEffect } from "react";
 
 function App() {
   const [currentUser, setCurrentUser] = useState('')
@@ -26,8 +25,10 @@ function App() {
   return (
     <main>
       <section className="searchContainer">
+        <header>
           <h1>Github Inspector</h1>
           <SearchForm onSubmit={searchUsers}/>
+        </header>
           <ItemsList searchUsers={searchResults} onClick={getUserDetails} isLoading={isLoading}/>
       </section>
       <section className="detailsContainer">
