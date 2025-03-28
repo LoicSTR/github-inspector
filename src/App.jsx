@@ -1,34 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import { githubRequest } from "./utils";
+import { useState } from "react";
+import SearchForm from "./components/searchForm"
+import ItemsList from "./components/ItemsList";
+import UserDetails from "./components/UserDetails";
+// import { useEffect } from "react";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [currentUser, setCurrentUser] = useState('')
+  const [searchResults, setSearchResults] = useState('')
+
+  const searchUsers = async (form) => {
+    const users = await githubRequest(`https://api.github.com/search/users?q=${form.query}`)
+    setSearchResults(users.items)
+    setCurrentUser('')
+  }
+
+  // useEffect(() => {
+  //   console.log(searchResults)
+  // }, [searchResults])
 
   return (
-    <>
+    <section className="main">
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <h1>Github Inspector</h1>
+        <SearchForm onSubmit={searchUsers}/>
+        <p>{searchResults.length ? `${searchResults.length} recherches` : "Aucun résultat"} </p>
+        <ItemsList searchUsers={searchResults} onClick={setCurrentUser}/>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+      <UserDetails user={currentUser} />
+    </section>
   )
 }
 
