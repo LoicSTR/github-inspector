@@ -54,8 +54,8 @@ const UserDetails = ({user}) => {
                             <p>{repo.name}</p>
                             <p>{repo?.description}</p>
                             <ul>
-                                {Object.entries(repo.languages).map(([language, size]) => (
-                                    <li key={language}>{language}</li>
+                                {Object.entries(repo.languages).map(language => (
+                                    <li key={language[0]}>{language[0]}</li>
                                 ))}
                             </ul>
                         </a>
