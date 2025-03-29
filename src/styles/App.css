@@ -4,6 +4,7 @@ html {
     --primary-color: #0e1c36;
     --secondary-color: #afcbff;
     --tertiary-color: #f9fbf2;
+    --primary-light-color: #182a4c;
 }
 
 body {
@@ -15,18 +16,25 @@ main {
 }
 
 .searchContainer {
+    /* position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0; */
     background-color: var(--primary-color);
     color: var(--tertiary-color);
-    height: 100dvh;
+    height: 100%;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
 header {
     position: sticky;
-    top: 2rem;
-    margin: 2rem 2rem 1rem;
+    top: 0;
+    padding: 2rem 2rem 1rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    background-color: var(--primary-color);
+    border-bottom: 1px solid var(--tertiary-color);
 }

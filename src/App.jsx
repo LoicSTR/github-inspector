@@ -1,10 +1,10 @@
-import "./styles/App.css";
+import "./styles/App.css"
 import "./styles/reset.css"
-import { githubRequest } from "./utils";
-import { useState } from "react";
+import { githubRequest } from "./utils"
+import { useState } from "react"
 import SearchForm from "./components/Searchform/SearchForm"
-import ItemsList from "./components/ItemsList/ItemsList";
-import UserDetails from "./components/UserDetails";
+import ItemsList from "./components/ItemsList/ItemsList"
+import UserDetails from "./components/UserDetails/UserDetails"
 
 function App() {
   const [currentUser, setCurrentUser] = useState('')
@@ -22,12 +22,18 @@ function App() {
   const getUserDetails = (user) => {
     setCurrentUser({login: user, timestamp: Date.now()})
   }
+  let resultText;
+  if (searchResults) {
+    resultText = searchResults.length ? `${searchResults.length} ${(searchResults.length > 1 ? "results" : "result")}` : "No result"
+  }
+
   return (
     <main>
       <section className="searchContainer">
         <header>
           <h1>Github Inspector</h1>
           <SearchForm onSubmit={searchUsers}/>
+          <p>{resultText}</p>
         </header>
           <ItemsList searchUsers={searchResults} onClick={getUserDetails} isLoading={isLoading}/>
       </section>
