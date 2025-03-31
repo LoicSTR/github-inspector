@@ -1,44 +1,56 @@
 .detailsContainer {
-    padding: 3rem;
+    padding: 0 1.5rem;
     background-color: var(--tertiary-color);
     width: 100%;
+    flex: 1;
+    height: 100vh;
     display: flex;
     flex-direction: row;
     gap: 2rem;
 }
 
-.detailsContainer img {
+.detailsContainer > div {
+    padding: 3rem 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.stickyContainer {
+    width: 20rem;
+}
+
+.stickyContainer img {
     width: 20rem;
     height: 20rem;
     border-radius: 1rem;
 }
 
-h2 {
+.stickyContainer h2 {
     font-size: 3rem;
     color: var(--primary-color);
 }
 
-.detailsContainer .login {
+.stickyContainer .login {
     margin-top: -1rem;
     font-weight: 400;
     font-size: 2rem;
     opacity: 0.8
 }
 
-.detailsContainer .bio {
+.stickyContainer .bio {
     margin-top: 1rem;
     font-size: 1.25rem;
 }
 
-.detailsContainer .top {
-    padding-bottom: 1rem;
-    margin-bottom: 1rem;
-    border-bottom: 1px solid var(--primary-color);
+.reposContainer {
+    flex: 1;
 }
 
-.detailsContainer ul {
+.reposContainer ul {
     list-style: none;
     padding: 0;
+    flex: 1;
+    overflow-y: scroll;
 }
 
 a {
@@ -46,6 +58,40 @@ a {
     text-decoration: none;
 }
 
+.repoContent {
+    margin-right: 2rem;
+    gap: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.repoContent:hover {
+    transform: translateX(0.75rem);
+}
+
+.repoContent:hover h4 {
+    text-decoration: underline;
+}
+
 strong {
     font-size: 1.125rem;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--primary-color);
+}
+
+h4 {
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+
+.languages {
+    margin-top: 0.25rem;
+    display: flex;
+    gap: .5rem;
+    color: var(--tertiary-color);
+}
+.languages li {
+    font-size: .8rem;
+    border-radius: .5rem;
+    padding: .25rem .5rem;
 }
