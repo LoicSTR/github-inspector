@@ -7,7 +7,7 @@ Ce projet a été réalisé dans le cadre du **cours de React** afin de mettre e
 
 ### Fonctionnalités
 
-- 🔍 **Recherche d'utilisateur GitHub** via un champ de recherche
-- 👤 Affichage des **informations publiques** de l'utilisateur (nom, bio, avatar, nombre de followers, etc.)
-- 📂 Listing des **repositories publics** de l'utilisateur
-- 🔗 Chaque repository est cliquable avec un **lien direct vers le dépôt**
+- **Recherche d'utilisateur GitHub** via un champ de recherche
+- Affichage des **informations publiques** de l'utilisateur (nom, bio, avatar, nombre de followers, etc.)
+- Listing des **repositories publics** de l'utilisateur
+- Chaque repository est cliquable avec un **lien direct vers le dépôt**
