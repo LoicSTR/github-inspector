@@ -29,6 +29,8 @@
 .stickyContainer h2 {
   font-size: 2.25rem;
   color: var(--primary-color);
+  line-height: 2rem;
+  margin: 1rem 0;
 }
 
 .stickyContainer .login {
