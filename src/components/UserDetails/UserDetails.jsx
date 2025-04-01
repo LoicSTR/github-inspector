@@ -48,7 +48,7 @@ const UserDetails = ({ user }) => {
     return null;
   }
   if (isLoading || !userDetails) {
-    return <LoadingScreen />;
+    return <LoadingScreen color="black" size="10rem" />;
   }
   const { details, repositories } = userDetails;
 
