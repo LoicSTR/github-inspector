@@ -109,6 +109,7 @@ h4 {
 }
 
 .closeButton {
+  display: none;
   position: fixed;
   top: 1rem;
   right: 1rem;
@@ -141,5 +142,9 @@ h4 {
 
   .active {
     display: flex;
+  }
+
+  .closeButton {
+    display: block;
   }
 }
