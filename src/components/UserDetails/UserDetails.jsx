@@ -3,6 +3,7 @@ import { githubRequest } from "../../utils";
 import languageColors from "../../utils/languageColors";
 import LoadingScreen from "../LoadingScreen/LoadingScreen";
 import "./UserDetails.css";
+import githubLogo from "../../assets/logo-github.png";
 
 const UserDetails = ({ user, onClose }) => {
   const [userDetails, setUserDetails] = useState({});
@@ -45,7 +46,16 @@ const UserDetails = ({ user, onClose }) => {
   }, [user]);
 
   if (!user) {
-    return <section className="detailsContainer"></section>;
+    return (
+      <section className="detailsContainer start">
+        <img src={githubLogo} alt="Github logo" />
+        <p>Welcome! Start searching for a GitHub user…</p>
+        <p>Or take a peek at my own profile</p>
+        <a href="https://github.com/LoicSTR">
+          <i className="fa-solid fa-arrow-right"></i>LoicSTR
+        </a>
+      </section>
+    );
   }
   if (isLoading || !userDetails) {
     return (

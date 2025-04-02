@@ -9,6 +9,33 @@
   gap: 2rem;
 }
 
+.detailsContainer.start {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.detailsContainer.start img {
+  width: 5rem;
+}
+
+.detailsContainer.start a {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  transition: transform 0.3s ease;
+}
+
+.detailsContainer.start a i {
+  margin-right: 1rem;
+}
+
+.detailsContainer.start a:hover {
+  transform: translateX(0.5rem);
+  text-decoration: underline;
+}
+
 .detailsContainer > div {
   display: flex;
   flex-direction: column;
