@@ -77,7 +77,7 @@ const UserDetails = ({ user }) => {
           {repositories?.length}{" "}
           {repositories?.length > 1 ? "repositeries" : "repository"}
         </strong>
-        <ul>
+        <ul className="reposList">
           {repositories?.map((repo) => (
             <li key={repo.id} className="repoContent">
               <a href={repo.html_url} target="_blank">

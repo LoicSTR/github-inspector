@@ -54,9 +54,7 @@
   flex: 1;
 }
 
-.reposContainer ul {
-  list-style: none;
-  padding: 0;
+.reposContainer ul.reposList {
   flex: 1;
   overflow-y: scroll;
 }
@@ -104,8 +102,20 @@ h4 {
   gap: 0.5rem;
   color: var(--tertiary-color);
 }
+
 .languages li {
   font-size: 0.8rem;
   border-radius: 0.5rem;
   padding: 0.25rem 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .detailsContainer > div {
+    padding: 0;
+  }
+  .detailsContainer {
+    padding: 1rem;
+    flex-direction: column;
+    height: 100%;
+  }
 }
