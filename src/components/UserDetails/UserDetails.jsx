@@ -59,7 +59,7 @@ const UserDetails = ({ user, onClose }) => {
 
   return (
     <section className="detailsContainer active">
-      <button className="closeButton" onClick={onClose}>
+      <button className="closeButton" onClick={onClose} aria-label="Close">
         <i className="fa-solid fa-xmark"></i>
       </button>
       <div className="stickyContainer">
