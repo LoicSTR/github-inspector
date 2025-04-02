@@ -1,12 +1,13 @@
-# React + Vite
+## 🕵️‍♂️ Github Inspector
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Description
 
-Currently, two official plugins are available:
+**GitHub Inspector** est une application développée avec **React** permettant de **rechercher un utilisateur GitHub** et d'afficher ses informations publiques ainsi que la liste de ses dépôts.  
+Ce projet a été réalisé dans le cadre du **cours de React** afin de mettre en pratique les notions d'état, de composants, et de consommation d'API.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Fonctionnalités
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Recherche d'utilisateur GitHub** via un champ de recherche
+- Affichage des **informations publiques** de l'utilisateur (nom, bio, avatar, nombre de followers, etc.)
+- Listing des **repositories publics** de l'utilisateur
+- Chaque repository est cliquable avec un **lien direct vers le dépôt**
