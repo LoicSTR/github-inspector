@@ -57,9 +57,6 @@ const UserDetails = ({ user }) => {
       <div className="stickyContainer">
         <img src={details?.avatar_url} alt={details?.login} />
         <h2>{details?.name}</h2>
-        <p className="login">
-          {details?.login} {details?.location ? `- ${details.location}` : ""}
-        </p>
         <div className="followsStats">
           <p>
             {details?.followers}{" "}
