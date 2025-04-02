@@ -172,6 +172,6 @@ h4 {
   }
 
   .closeButton {
-    display: block;
+    display: flex;
   }
 }
