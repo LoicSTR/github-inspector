@@ -9,7 +9,6 @@
 
 .loadingScreen img {
   height: auto;
-  /* opacity: 0.7; */
   animation: spin 1.2s ease infinite;
 }
 
