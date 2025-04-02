@@ -42,6 +42,7 @@ button {
   color: var(--primary-color);
   width: 2rem;
   aspect-ratio: 1;
+  cursor: pointer;
 }
 
 i {
