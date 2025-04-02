@@ -51,7 +51,7 @@ const UserDetails = ({ user, onClose }) => {
         <img src={githubLogo} alt="Github logo" />
         <p>Welcome! Start searching for a GitHub user…</p>
         <p>Or take a peek at my own profile</p>
-        <a href="https://github.com/LoicSTR">
+        <a href="https://github.com/LoicSTR" target="_blank">
           <i className="fa-solid fa-arrow-right"></i>LoicSTR
         </a>
       </section>
