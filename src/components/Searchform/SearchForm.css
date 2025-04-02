@@ -10,15 +10,3 @@ input {
   background-color: var(--tertiary-color);
   color: var(--primary-color);
 }
-
-button {
-  border-radius: 0.5rem;
-  background-color: var(--secondary-color);
-  color: var(--primary-color);
-  width: 2rem;
-  aspect-ratio: 1;
-}
-
-i {
-  width: auto;
-}
