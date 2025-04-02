@@ -4,7 +4,7 @@ import languageColors from "../../utils/languageColors";
 import LoadingScreen from "../LoadingScreen/LoadingScreen";
 import "./UserDetails.css";
 
-const UserDetails = ({ user }) => {
+const UserDetails = ({ user, onClose }) => {
   const [userDetails, setUserDetails] = useState({});
   const [isLoading, setIsLoading] = useState(false);
 
@@ -45,15 +45,23 @@ const UserDetails = ({ user }) => {
   }, [user]);
 
   if (!user) {
-    return null;
+    return <section className="detailsContainer"></section>;
   }
   if (isLoading || !userDetails) {
-    return <LoadingScreen color="black" size="10rem" />;
+    return (
+      <section className="detailsContainer active">
+        <LoadingScreen color="black" size="10rem" />
+      </section>
+    );
   }
+
   const { details, repositories } = userDetails;
 
   return (
-    <section className="detailsContainer">
+    <section className="detailsContainer active">
+      <button className="closeButton" onClick={onClose}>
+        <i className="fa-solid fa-xmark"></i>
+      </button>
       <div className="stickyContainer">
         <img src={details?.avatar_url} alt={details?.login} />
         <a href={details?.url}>

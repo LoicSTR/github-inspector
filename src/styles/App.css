@@ -53,3 +53,13 @@ header {
   scrollbar-width: 0.75rem;
   scrollbar-color: var(--primary-color) var(--tertiary-color);
 }
+
+@media (max-width: 768px) {
+  .searchContainer {
+    width: 100%;
+  }
+
+  header {
+    align-items: center;
+  }
+}

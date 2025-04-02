@@ -1,5 +1,5 @@
 .detailsContainer {
-  padding: 0 1.5rem;
+  padding: 3rem;
   background-color: var(--tertiary-color);
   width: 100%;
   flex: 1;
@@ -10,7 +10,6 @@
 }
 
 .detailsContainer > div {
-  padding: 3rem 0;
   display: flex;
   flex-direction: column;
 }
@@ -109,13 +108,38 @@ h4 {
   padding: 0.25rem 0.5rem;
 }
 
-@media (max-width: 768px) {
+.closeButton {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  color: var(--tertiary-color);
+  background-color: var(--primary-color);
+}
+
+@media (max-width: 1024px) {
+  .detailsContainer {
+    flex-direction: column;
+    padding: 1rem;
+    overflow-y: scroll;
+  }
+
   .detailsContainer > div {
     padding: 0;
   }
+}
+
+@media (max-width: 768px) {
   .detailsContainer {
-    padding: 1rem;
-    flex-direction: column;
-    height: 100%;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 999;
+  }
+
+  .active {
+    display: flex;
   }
 }
