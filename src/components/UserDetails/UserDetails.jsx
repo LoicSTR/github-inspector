@@ -56,7 +56,9 @@ const UserDetails = ({ user }) => {
     <section className="detailsContainer">
       <div className="stickyContainer">
         <img src={details?.avatar_url} alt={details?.login} />
-        <h2>{details?.name}</h2>
+        <a href={details?.url}>
+          <h2>{details?.name}</h2>
+        </a>
         <div className="followsStats">
           <p>
             {details?.followers}{" "}

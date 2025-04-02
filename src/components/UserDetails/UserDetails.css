@@ -31,6 +31,7 @@
   color: var(--primary-color);
   line-height: 2rem;
   margin: 1rem 0;
+  transition: transform 0.3s ease;
 }
 
 .stickyContainer .login {
@@ -63,6 +64,11 @@
 a {
   color: inherit;
   text-decoration: none;
+}
+
+a:hover h2 {
+  text-decoration: underline;
+  transform: translateX(0.75rem);
 }
 
 .repoContent {
